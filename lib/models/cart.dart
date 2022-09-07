@@ -1,6 +1,15 @@
 import 'package:catalogapp/models/catalog_product.dart';
 
 class CartModel {
+  // singletan 7:03:34 time codepur
+  // catalog_product ma pan add kayru name chang karinne
+  //  cart ma product add karva
+  static final cartModel = CartModel._internal();
+  //
+  CartModel._internal();
+  //
+  factory CartModel() => cartModel;
+
   // catalog field
   late CatalogModel _catalog;
 

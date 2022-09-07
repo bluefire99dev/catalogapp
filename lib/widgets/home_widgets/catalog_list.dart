@@ -1,10 +1,12 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:catalogapp/models/cart.dart';
 import 'package:catalogapp/pages/home_detail_page.dart';
-import 'package:flutter/cupertino.dart';
+//  import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../models/catalog_product.dart';
-import '../../widgets/themes.dart';
+// import '../../widgets/themes.dart';
 // import '../home_page.dart';
 import 'catalog_image.dart';
 
@@ -67,15 +69,9 @@ class CatalogItem extends StatelessWidget {
                   buttonPadding: EdgeInsets.zero,
                   children: [
                     "\$${catalog.price}".text.bold.xl.make(),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            context.theme.buttonColor),
-                        shape: MaterialStateProperty.all(StadiumBorder()),
-                      ),
-                      child: "Add To Cart".text.make(),
-                    )
+                    //1. eveluted button widget extract kayru
+                    // 2._AddToCart() ne statfull banayvu
+                    _AddTOCart(catalog: catalog)
                   ],
                 ).pOnly(right: 8.0)
               ],
@@ -84,5 +80,40 @@ class CatalogItem extends StatelessWidget {
         ],
       ),
     ).color(context.cardColor).rounded.square(150).make().py16();
+  }
+}
+
+class _AddTOCart extends StatefulWidget {
+  final Item catalog;
+  const _AddTOCart({
+    Key? key,
+    required this.catalog,
+  }) : super(key: key);
+
+  @override
+  State<_AddTOCart> createState() => _AddTOCartState();
+}
+
+class _AddTOCartState extends State<_AddTOCart> {
+  bool isAdded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        //cart ma add karva
+        final _catalog = CatalogModel();
+        final _cart = CartModel();
+        //
+        _cart.catalog = _catalog;
+        _cart.add(widget.catalog);
+        setState(() {});
+      },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
+        shape: MaterialStateProperty.all(StadiumBorder()),
+      ),
+      child: isAdded ? Icon(Icons.done) : "Add To Cart".text.make(),
+    );
   }
 }

@@ -1,6 +1,14 @@
 class CatalogModel {
   static List<Item> items = [];
 
+// cart.dart mathi copy kayru
+//  cart ma product add karva
+  static final catModel = CatalogModel._internal();
+  //
+  CatalogModel._internal();
+  //
+  factory CatalogModel() => catModel;
+
   //= [
   //   Item(
   //     id: 1,

@@ -18,8 +18,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // homepage({Key? key}) : super(key: key);
-  double days = 30;
-  String name = "neel";
+  // double days = 30;
+  // String name = "neel";
 
 // json file leva
   @override
