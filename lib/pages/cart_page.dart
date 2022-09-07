@@ -74,7 +74,7 @@ class _cartListState extends State<_cartList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: _cart.item?.length,
+      itemCount: _cart.item.length,
       itemBuilder: (context, index) => ListTile(
         leading: Icon(Icons.done),
         trailing: IconButton(
