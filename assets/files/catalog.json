@@ -1,0 +1,64 @@
+{
+    "products":[
+        {
+            
+            "id": 1,
+            "name": "iPhone 12 Pro",
+            "desc": "Apple iPhone 12th generation",
+            "price": 999,
+            "color": "#33505a",
+            "image":
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"
+        },
+        {
+            "id": 2,
+            "name": "pixel",
+            "desc": "google pixel 1th generation",
+            "price": 888,
+            "color": "#33505a",
+            "image":
+                "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/s/y/0/-original-imaggbrbxkqr3v3u.jpeg?q=70"
+        },
+        {
+            "id": 3,
+            "name": "POCO M4 Pro 5G ",
+            "desc": "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+            
+            "price": 777,
+            "color": "#33505a",
+            "image":
+                "https://rukminim1.flixcart.com/image/416/416/l0igvww0/mobile/j/d/g/-original-imagcafg6hbeeqwf.jpeg?q=70"
+        },
+        {
+            "id": 4,
+            "name": "Infinix Note 11 ",
+            "desc": "4 GB RAM | 64 GB ROM | Expandable Upto 512 GB.17.02 cm (6.7 inch) Full HD+ AMOLED Display, 50 MP + 2 MP + AI Lens | 16MP Front Camera,5000 mAh Li-ion Polymer Battery",
+            
+            "price": 666,
+            "color": "#33505a",
+            "image":
+                "https://rukminim1.flixcart.com/image/416/416/kx25ksw0/mobile/4/v/5/-original-imag9hgmbb5rntyg.jpeg?q=70"
+        },
+        {
+            "id": 5,
+            "name": "Lenovo K9 (Black, 32 GB) ",
+            "desc": "3 GB RAM | 32 GB ROM | Expandable Upto 256 GB 14.48 cm (5.7 inch) HD+ Display",
+            
+            "price": 555,
+            "color": "#33505a",
+            "image":
+                "https://rukminim1.flixcart.com/image/416/416/jnamvm80/mobile/u/8/y/lenovo-k9-padv0031cn-original-imafayegk6nxqtjr.jpeg?q=70"
+        },
+        {
+            "id": 6,
+            "name": "realme 8s 5G (Universe Purple, 128 GB)  (6 GB RAM)",
+            "desc": "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB 64MP + 2MP + 2MP",
+            
+            "price": 444,
+            "color": "#33505a",
+            "image":
+                "https://rukminim1.flixcart.com/image/416/416/ktbu6q80/mobile/f/s/e/8s-5g-rmx3381-realme-original-imag6zhgra57dtqe.jpeg?q=70"
+        }
+        
+    ]
+}
