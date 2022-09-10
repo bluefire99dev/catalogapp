@@ -38,11 +38,18 @@ class _cartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalprice}"
-              .text
-              .xl5
-              .color(context.theme.accentColor)
-              .make(),
+          //price plus minus karva vsconsumer
+          VxConsumer(
+            builder: (context, store, status) {
+              return "\$${_cart.totalprice}"
+                  .text
+                  .xl5
+                  .color(context.theme.accentColor)
+                  .make();
+            },
+            mutations: {RemoveMutation},
+            notifications: {},
+          ),
           30.widthBox,
           ElevatedButton(
             onPressed: () {
@@ -68,6 +75,7 @@ class _cartList extends StatelessWidget {
   // final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
 
     return _cart.item.isEmpty
@@ -79,8 +87,9 @@ class _cartList extends StatelessWidget {
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
                 onPressed: () {
+                  RemoveMutation(_cart.item[index]);
                   //item remove karva
-                  _cart.remove(_cart.item[index]);
+                  // _cart.remove(_cart.item[index]);
                   // setState(() {});
                 },
               ),
