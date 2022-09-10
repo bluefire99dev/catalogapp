@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:catalogapp/widgets/home_widgets/add_to_cart.dart';
 import 'package:catalogapp/widgets/themes.dart';
 // import 'package:file/memory.dart';
 // import 'package:flutter/cupertino.dart';
@@ -32,16 +33,21 @@ class HomeDetailsPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(context.theme.buttonColor),
-                // MaterialStateProperty.all(Colors.amber),
-                shape: MaterialStateProperty.all(StadiumBorder()),
-              ),
-              child: "Add To Cart".text.make(),
-            ).wh(120, 50),
+            // ElevatedButton(
+            //   onPressed: () {},
+            //   style: ButtonStyle(
+            //     backgroundColor:
+            //         MaterialStateProperty.all(context.theme.buttonColor),
+            //     // MaterialStateProperty.all(Colors.amber),
+            //     shape: MaterialStateProperty.all(StadiumBorder()),
+            //   ),
+            //   child: "Add To Cart".text.make(),
+            // ).wh(120, 50),
+
+// product nu page  nu button add to cart thi pan add thai
+            AddTOCart(
+              catalog: catalog,
+            ).wh(120, 50)
           ],
         ).p32(),
       ),

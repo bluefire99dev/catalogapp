@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:catalogapp/models/cart.dart';
+// import 'package:catalogapp/models/cart.dart';
 import 'package:catalogapp/pages/home_detail_page.dart';
 //  import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
