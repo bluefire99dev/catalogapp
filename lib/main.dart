@@ -4,11 +4,13 @@ import 'package:catalogapp/pages/splash_page.dart';
 import 'package:catalogapp/utils/routes.dart';
 import 'package:catalogapp/widgets/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
+import 'core/store.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(VxState(store: MyStore(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -1,5 +1,6 @@
 // import 'package:catalogapp/widgets/themes.dart';
 // import 'package:flutter/cupertino.dart';
+import 'package:catalogapp/core/store.dart';
 import 'package:catalogapp/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -29,8 +30,9 @@ class Cartpage extends StatelessWidget {
 class _cartTotal extends StatelessWidget {
   _cartTotal({Key? key}) : super(key: key);
   @override
-  final _cart = CartModel();
+  // final _cart = CartModel();
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
@@ -62,17 +64,12 @@ class _cartTotal extends StatelessWidget {
   }
 }
 
-class _cartList extends StatefulWidget {
-  const _cartList({Key? key}) : super(key: key);
-
-  @override
-  State<_cartList> createState() => _cartListState();
-}
-
-class _cartListState extends State<_cartList> {
-  final _cart = CartModel();
+class _cartList extends StatelessWidget {
+  // final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
+
     return _cart.item.isEmpty
         ? "nothing to show".text.xl2.makeCentered()
         : ListView.builder(
@@ -84,7 +81,7 @@ class _cartListState extends State<_cartList> {
                 onPressed: () {
                   //item remove karva
                   _cart.remove(_cart.item[index]);
-                  setState(() {});
+                  // setState(() {});
                 },
               ),
               title: _cart.item[index].name.text.make(),

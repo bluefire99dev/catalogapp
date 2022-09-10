@@ -1,13 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:catalogapp/widgets/home_widgets/add_to_cart.dart';
-import 'package:catalogapp/widgets/themes.dart';
-// import 'package:file/memory.dart';
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/src/foundation/key.dart';
-// import 'package:flutter/src/widgets/framework.dart';
-// import 'package:velocity_x/velocity_x.dart';
-
 import 'package:catalogapp/models/catalog_product.dart';
 import 'package:velocity_x/velocity_x.dart';
 
