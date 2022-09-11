@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:catalogapp/core/store.dart';
+import 'package:catalogapp/models/cart.dart';
 import 'package:catalogapp/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //cart item show karva button ma
+    final cart = (VxState.store as MyStore).cart;
     // step:1:- bo badha dummy iphone banavse
     // final dummyList = List.generate(4, ((index) => CatalogModel.items[0]));
 
@@ -52,14 +56,25 @@ class _HomePageState extends State<HomePage> {
       //if we can not use the velocity x
       // backgroundColor: Theme.of(context).canvasColor,
       backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, MyRoutes.cartroute);
-        },
-        backgroundColor: context.theme.buttonColor,
-        child: Icon(
-          CupertinoIcons.cart,
-          color: Colors.white,
+
+      floatingActionButton: VxBuilder(
+        //cart icont ma item add and remove show in num
+        mutations: {AddMutation, RemoveMutation},
+        builder: (context, store, status) => FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.cartroute);
+          },
+          backgroundColor: context.theme.buttonColor,
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
+        ).badge(
+          color: Vx.red500,
+          size: 22,
+          count: cart.item.length,
+          textStyle:
+              TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: SafeArea(
